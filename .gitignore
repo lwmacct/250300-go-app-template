@@ -1,0 +1,13 @@
+.local/*
+Dockerfile
+
+# 文件
+**/.env
+**/*.log
+**/.DS_Store
+
+# 临时目录
+**/tmp/**
+**/logs/**
+**/temp/**
+**/cache/**
