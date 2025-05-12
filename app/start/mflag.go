@@ -1,8 +1,6 @@
 package start
 
 import (
-	"strings"
-
 	"github.com/lwmacct/250300-go-app-template/app"
 
 	"github.com/lwmacct/250300-go-mod-mflag/pkg/mflag"
@@ -35,7 +33,7 @@ func (t *cmd) run(args []string) {
 	}
 
 	if len(args) == 0 {
-		mlog.Error(mlog.H{"msg": "需要指定任务" + formatTaskList(availableTasks)})
+		mlog.Error(mlog.H{"msg": "需要指定任务", "可选任务": availableTasks})
 		return
 	}
 
@@ -43,13 +41,8 @@ func (t *cmd) run(args []string) {
 	if fn, exists := tasks[task]; exists {
 		fn()
 	} else {
-		mlog.Error(mlog.H{"msg": "未知任务: " + task + formatTaskList(availableTasks)})
+		mlog.Error(mlog.H{"msg": "需要指定任务", "可选任务": availableTasks})
 	}
-}
-
-// formatTaskList 将任务列表格式化为便于显示的字符串
-func formatTaskList(tasks []string) string {
-	return "(" + strings.Join(tasks, "|") + ")"
 }
 
 func Cmd() *mflag.Ts {
