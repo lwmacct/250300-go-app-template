@@ -1,6 +1,6 @@
 module github.com/lwmacct/250300-go-app-template
 
-go 1.24.0
+go 1.24.4
 
 require (
 	github.com/lwmacct/250300-go-mod-mflag v0.0.2

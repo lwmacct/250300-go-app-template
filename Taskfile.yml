@@ -9,6 +9,10 @@ includes:
     optional: true
     flatten: true
 
+  cmd:
+    taskfile: .taskfile/cmd.yml
+    optional: true
+
   git:
     taskfile: .taskfile/git.yml
     optional: true
